@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bubble-wrap (1.4.0)
+    geomotion (0.13.1)
+    rake (10.1.0)
+    twittermotion (0.0.2)
+      bubble-wrap (>= 1.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  geomotion
+  rake
+  twittermotion
