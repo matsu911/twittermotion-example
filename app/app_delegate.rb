@@ -1,12 +1,6 @@
-# class AppDelegate
-#   def application(application, didFinishLaunchingWithOptions:launchOptions)
-#     true
-#   end
-# end
-
 class Twitter::User
-  def identifier
-    self.ac_account.identifier
+  def user_id
+    self.ac_account.valueForKeyPath("properties")["user_id"]
   end
 end
 
@@ -18,8 +12,7 @@ class AppDelegate
     @window.makeKeyAndVisible
 
     Twitter.sign_in do |granted, error|
-      p Twitter.accounts
-      p Twitter.accounts.first.identifier
+      p Twitter.accounts.first.user_id
       if granted
         compose = UIButton.buttonWithType(UIButtonTypeRoundedRect)
         compose.setTitle("Compose", forState:UIControlStateNormal)
